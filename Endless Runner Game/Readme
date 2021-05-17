@@ -1,0 +1,9 @@
+Endless Runner Game:
+the game is made using c# and unity 3D:
+	.the gameis developed using concept of pooling
+	.the game spawns multiple enemies
+	.enemies spawning become faster as distance increases
+	.the player kills the enemies using spacebar
+	.the player flashlight have a health bar, it decreses on continuos push and get to red once all energy is used
+	.on release, it get back to full health.
+
