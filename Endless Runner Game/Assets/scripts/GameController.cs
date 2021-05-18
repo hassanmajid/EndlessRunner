@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour
     private static float difficultyMultiplier = 1;
     private static float difficultyOffset = 100f;
     private static int enemyCount = 0;
+    private static bool gamePaused = true;
 
     public static float Distance
     {
@@ -33,6 +34,12 @@ public class GameController : MonoBehaviour
         set => enemyCount = value;
     }
 
+    public static bool GamePaused
+    {
+        get => gamePaused;
+        set => gamePaused = value;
+    }
+
     public GameController instance;
 
 
@@ -43,7 +50,8 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
-        difficultyMultiplier = 1 + (distance/difficultyOffset);
+        if(!gamePaused)
+            difficultyMultiplier = 1 + (distance/difficultyOffset);
     }
 
 }

@@ -25,6 +25,12 @@ public class healthComponent : MonoBehaviour
 
 
             }
+            if(gameObject.tag=="Player")
+            {
+
+                currhealth = maxhealth;
+                UIController.Instance.endGame();
+            }
             
         }
     }
@@ -38,4 +44,10 @@ public class healthComponent : MonoBehaviour
     {
         currhealth = maxhealth;
     }
+
+
+
+
+
+
 }

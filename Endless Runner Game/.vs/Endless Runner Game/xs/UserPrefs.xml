@@ -1,14 +1,14 @@
 ﻿<Properties StartupConfiguration="{30E863F1-1946-D104-13A7-A07FE380515C}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/scripts/objectspawner.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/scripts/UIController.cs">
     <Files>
       <File FileName="Assets/scripts/objectPooler.cs" Line="31" Column="70" />
-      <File FileName="Assets/scripts/objectspawner.cs" Line="75" Column="164" />
-      <File FileName="Assets/scripts/MoveComponent.cs" />
-      <File FileName="Assets/scripts/EnemyController.cs" />
-      <File FileName="Assets/scripts/healthComponent.cs" Line="22" Column="45" />
-      <File FileName="Assets/scripts/playerMovement.cs" />
-      <File FileName="Assets/scripts/UIController.cs" Line="6" Column="14" />
-      <File FileName="Assets/scripts/GameController.cs" />
+      <File FileName="Assets/scripts/objectspawner.cs" Line="64" Column="118" />
+      <File FileName="Assets/scripts/MoveComponent.cs" Line="63" Column="14" />
+      <File FileName="Assets/scripts/EnemyController.cs" Line="52" Column="29" />
+      <File FileName="Assets/scripts/healthComponent.cs" Line="28" Column="34" />
+      <File FileName="Assets/scripts/playerMovement.cs" Line="57" Column="1" />
+      <File FileName="Assets/scripts/UIController.cs" Line="65" Column="10" />
+      <File FileName="Assets/scripts/GameController.cs" Line="11" Column="43" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -16,7 +16,7 @@
           <Node name="Endless Runner Game" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="scripts" expanded="True">
-                <Node name="objectspawner.cs" selected="True" />
+                <Node name="UIController.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -26,7 +26,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="769f7cf8-303a-45ca-9788-e0df66e2789c" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="471fa067-6bed-4d0a-aebe-c39dd671b608" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

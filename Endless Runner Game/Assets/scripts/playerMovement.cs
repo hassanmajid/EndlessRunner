@@ -33,24 +33,26 @@ public class playerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-       
-        
-        GetComponent<Rigidbody>().velocity = new Vector3(horizontalInput * 4,GetComponent<Rigidbody>().velocity.y, 0);
-        
+        if (!GameController.GamePaused)
+        {
+
+            GetComponent<Rigidbody>().velocity = new Vector3(horizontalInput * 4, GetComponent<Rigidbody>().velocity.y, 0);
+
             if (Input.GetKey(KeyCode.Space))
             {
 
-            UIController.Instance.usingCharge = true;
-            if (!emptyCharge)
-                lightObj.SetActive(true);
+                UIController.Instance.usingCharge = true;
+                if (!emptyCharge)
+                    lightObj.SetActive(true);
+                else
+                    lightObj.SetActive(false);
+            }
             else
-                lightObj.SetActive(false); 
-        }
-           else
             {
 
-            UIController.Instance.usingCharge = false;
-            lightObj.SetActive(false);
+                UIController.Instance.usingCharge = false;
+                lightObj.SetActive(false);
+            }
         }
 
        

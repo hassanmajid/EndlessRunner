@@ -32,31 +32,35 @@ public class MoveComponent : MonoBehaviour
 
     private void Update()
     {
-        if (enemy != null && !enemy.targetingPlayer)
-            transform.position += -transform.forward * speed * Time.deltaTime;
-        else if (enemy != null && enemy.targetingPlayer)
-            transform.position += Vector3.zero;
-        else
-            transform.position += -transform.forward * speed * Time.deltaTime;
-
-        if(transform.position.z<player.transform.position.z - 10f && enemy!=null)
+        if (!GameController.GamePaused)
         {
-            healthref.resetHealth();
-            gameObject.SetActive(false);
-        }
+            if (enemy != null && !enemy.targetingPlayer)
+                transform.position += -transform.forward * speed * Time.deltaTime;
+            else if (enemy != null && enemy.targetingPlayer)
+                transform.position += Vector3.zero;
+            else
+                transform.position += -transform.forward * speed * Time.deltaTime;
+
+            if (transform.position.z < player.transform.position.z - 10f && enemy != null)
+            {
+                healthref.resetHealth();
+                gameObject.SetActive(false);
+            }
 
 
-        if (transform.position.z <= objectDistance && transform.tag=="ground" && canSpawnGround)
-        {
+            if (transform.position.z <= objectDistance && transform.tag == "ground" && canSpawnGround)
+            {
 
-            objectspawner.Instance.SpawnGround();
-            canSpawnGround = false;
+                objectspawner.Instance.SpawnGround();
+                canSpawnGround = false;
 
-        }
-        if(transform.position.z <= despawnDistance)
-        {
-            canSpawnGround = true;
-            gameObject.SetActive(false);
+            }
+            if (transform.position.z <= despawnDistance)
+            {
+                canSpawnGround = true;
+                gameObject.SetActive(false);
+
+            }
 
         }
 

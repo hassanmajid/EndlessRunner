@@ -8,6 +8,8 @@ public class objectspawner : MonoBehaviour
     private bool spawningobject = false;
     public static objectspawner Instance;
     public float GroundSpawnDistance;
+    
+
 
     [System.Serializable]
     public struct Spawnable
@@ -59,7 +61,7 @@ public class objectspawner : MonoBehaviour
 
     private void Update()
     {
-        if(!spawningobject && GameController.EnemyCount<enemySettings[0].maxObjects)
+        if (!spawningobject && GameController.EnemyCount < enemySettings[0].maxObjects && !GameController.GamePaused;)
         {
             spawningobject = true;
             float pick = Random.value * totalWeight;

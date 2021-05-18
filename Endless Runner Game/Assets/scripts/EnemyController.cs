@@ -7,6 +7,8 @@ public class EnemyController : MonoBehaviour
     private Transform Player;
     [SerializeField] private float movespeed = 5f;
     [SerializeField] private float range = 7.5f;
+    [SerializeField] private float attackRange = 0.5f;
+    private bool isAttacking = false;
 
     public bool targetingPlayer = false;
     private healthComponent healthref;
@@ -22,19 +24,33 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(transform.position, Player.position) <= range)
+        if (!GameController.GamePaused)
         {
+            if (Vector3.Distance(transform.position, Player.position) <= range)
+            {
 
-            transform.position = Vector3.MoveTowards(transform.position, Player.position, movespeed * Time.deltaTime);
-            transform.LookAt(Player);
-            targetingPlayer = true;
+                transform.position = Vector3.MoveTowards(transform.position, Player.position, movespeed * Time.deltaTime);
+                transform.LookAt(Player);
+                targetingPlayer = true;
 
 
+            }
+            else
+                targetingPlayer = false;
+
+            if(targetingPlayer && Vector3.Distance(transform.position,Player.position)<=attackRange && !isAttacking)
+            {
+                isAttacking = true;
+                StartCoroutine(attack());
+            }
         }
-        else
-            targetingPlayer = false;
     }
-
+    private IEnumerator attack()
+    {
+        yield return new WaitForSeconds(Random.Range(0.5f, 2f));
+        Player.GetComponent<healthComponent>().updateHealth(-5f);
+        isAttacking = false;
+    }
 
     private void OnTriggerStay(Collider other)
     {
