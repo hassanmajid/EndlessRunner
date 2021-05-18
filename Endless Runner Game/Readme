@@ -6,4 +6,8 @@ the game is made using c# and unity 3D:
 	.the player kills the enemies using spacebar
 	.the player flashlight have a health bar, it decreses on continuos push and get to red once all energy is used
 	.on release, it get back to full health.
+	update//
+	added 	UI menu
+	added player health 
+	added restart screen.
 
